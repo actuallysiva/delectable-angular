@@ -1,0 +1,10 @@
+<div class="col-md-8">
+    <div class="input-group">
+      <input type="text" class="form-control" [value]="searchText" name="keyword" (keyup)="terms$.next($event.target.value)" placeholder="Search Place..." />
+    </div>
+    <div *ngIf="isSearchActive">
+        <ul *ngIf="locations" class="list-group location-search-list">
+          <city *ngFor="let loc of locations" [city]="loc" (onClickEvent)="receiveClickStatus($event)"></city>
+        </ul>
+    </div>
+</div>
