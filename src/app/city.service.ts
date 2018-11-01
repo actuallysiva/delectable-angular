@@ -5,7 +5,6 @@ import 'rxjs/add/operator/map';
 import { apiKey } from './constant';
 
 import { LocationResponse } from './models/location_response';
-import { CollectionsResponse } from './models/collection_response';
 
 @Injectable()
 export class CityService {
@@ -18,14 +17,6 @@ export class CityService {
     const requestOpt = new RequestOptions({ headers: headers });
 
     return this.http.get('https://developers.zomato.com/api/v2.1/locations?query=' + keyword + '&count=10', requestOpt)
-            .map((response: Response) => response.json());
-  }
-
-  getCollections(city_id: number): Observable<CollectionsResponse> {
-    const headers = new Headers({ 'user-key' : apiKey });
-    const requestOpt = new RequestOptions({ headers : headers });
-
-    return this.http.get('https://developers.zomato.com/api/v2.1/collections?city_id=' + city_id, requestOpt)
             .map((response: Response) => response.json());
   }
 

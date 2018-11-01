@@ -19,7 +19,7 @@ import 'rxjs/add/operator/switchMap';
 })
 export class SearchComponent implements OnInit {
 
-  private terms$ = new Subject<string>();
+  terms$ = new Subject<string>();
   isSearchActive: boolean;
   searchText: string;
   locations: Location[];

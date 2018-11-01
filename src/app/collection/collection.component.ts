@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { CityService } from '../city.service';
-import { CollectionsResponse } from '../models/collection_response';
-import { CollectionItem } from './collection_item.component';
 
 @Component({
+  // tslint:disable-next-line:component-selector
   selector: 'collection',
   templateUrl: './collection.component.html',
   styleUrls: ['./collection.component.css'],
@@ -14,7 +13,7 @@ import { CollectionItem } from './collection_item.component';
 })
 export class CollectionComponent implements OnInit {
 
-  private collections;
+  collections;
 
   constructor(
     private cityService: CityService,
